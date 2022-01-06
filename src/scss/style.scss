@@ -1,0 +1,70 @@
+@import './font.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1268px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    padding: 55px 0;
+    margin-bottom: 320px;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'SFProDisplay Medium';
+
+        font-family: SF Pro Display;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+    }
+}
+
+.main-section {
+    position: relative;
+    border: 2px solid red;
+
+    &::after {
+        position: absolute;
+        content: url('../img/title.svg');
+        border: 5px solid yellow;
+
+
+        // background: url('../img/title.svg');
+        //background-size: 100% 100%;
+
+        max-width: 70%;
+       // margin: auto;
+
+        top: -17%;
+        // right:0; 
+        left: 0;
+
+        text-align: center;
+
+    }
+}
