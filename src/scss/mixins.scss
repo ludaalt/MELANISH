@@ -1,0 +1,31 @@
+@mixin font-pack($family, $style, $weight, $size, $height, $transform, $color, $decoration: 'none') {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    text-transform: $transform;
+    color: $color;
+    text-decoration: $decoration;
+}
+
+@mixin background($url, $size, $position, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+@mixin position($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin pseudo($position, $content, $top, $right, $left, $width) {
+    position: $position;
+    content: $content; 
+    top: $top;
+    right: $right; 
+    left: $left;
+    width: $width;
+}
