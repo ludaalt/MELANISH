@@ -1,4 +1,5 @@
 const { src, dest, series, watch } = require('gulp')
+const svgSprite = require('gulp-svg-sprite')
 const sass = require('gulp-sass')(require('sass'))
 const csso = require('gulp-csso')
 const include = require('gulp-file-include')
@@ -37,8 +38,24 @@ function fonts() {
 }
 
 function images() {
-    return src('./src/img/**/*.{png,jpg,jpeg,webp,raw,svg}') 
+    return src('./src/img/*.{png,jpg,jpeg,webp,raw}') 
     .pipe(dest('./dist/img/')); 
+}
+
+function sprite() {
+    const config = {
+        mode: {
+          view: {
+            bust: false,
+            render: {
+              scss: true
+            }
+          },
+          symbol: false
+        }
+      };
+
+     return src('src/img/**/*.svg').pipe(svgSprite(config)).pipe(dest('dist/img/'))
 }
 
 function clear() {
@@ -54,8 +71,9 @@ function serve() {
     watch('src/scss/**.scss', series(scss)).on('change', sync.reload)
 }
 
-exports.build = series(clear, scss, html, fonts, images)
-exports.serve = series(clear, scss, html, fonts, images, serve)
+exports.build = series(clear, scss, html, fonts, images, sprite)
+exports.serve = series(clear, scss, html, fonts, images, sprite, serve)
 exports.clear = clear
 exports.fonts = fonts
 exports.images = images
+exports.sprite = sprite
