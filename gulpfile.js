@@ -44,18 +44,22 @@ function images() {
 
 function sprite() {
     const config = {
+        shape: {
+            spacing: {
+                padding: 20
+            },
+        },
         mode: {
-          view: {
-            bust: false,
-            render: {
-              scss: true
-            }
-          },
-          symbol: false
+            view: {
+                bust: false,
+                render: {
+                    scss: true
+                }
+            },
+            symbol: false
         }
-      };
-
-     return src('src/img/**/*.svg').pipe(svgSprite(config)).pipe(dest('dist/img/'))
+    }
+    return src('src/img/**/*.svg').pipe(svgSprite(config)).pipe(dest('dist/img/'))
 }
 
 function clear() {
