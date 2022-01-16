@@ -1,11 +1,10 @@
 @import './font.scss';
 @import './mixins.scss';
-@import './style.scss';
+@import './base.scss';
 
 
 .header {
     padding: 30px 0;
-    // border: 5px solid green;
     position: relative;
 
     a {
@@ -19,11 +18,12 @@
         transform: translate(-50%, -50%);
 
         position: absolute;
-        min-width: 212px;
-	    min-height: 65px;
 
         background: url("./img/view/svg/sprite.view.svg") no-repeat;
-        background-position: 0 100%;
+        background-position: 0% 100.1%;
+
+        width: 220px;
+        min-height: 65px;
     }
 
     input {
