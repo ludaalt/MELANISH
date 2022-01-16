@@ -1,0 +1,33 @@
+@import './mixins.scss';
+@import './base.scss';
+
+.person-section {
+    @extend %flex-center;
+
+    text-align: center;
+    margin-top: 60px;
+
+    p:not(:last-child) {
+        margin-right: 88px;
+    }
+
+    .position {
+        margin-bottom: 8px;
+        @include font-pack('DM Mono', normal, normal, 16px, 121.4%, uppercase, #D6D0CE);
+    }
+
+    .person {
+        @include font-pack('Nympha', normal, normal, 24px, 121.4%, capitalize, #D6D0CE);    
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .person-section {
+        flex-direction: column;
+
+        p:not(:last-child) {
+            margin: 0 0 30px;
+        }
+    }
+}

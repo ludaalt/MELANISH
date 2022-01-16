@@ -1,0 +1,21 @@
+@import './font.scss';
+@import './mixins.scss';
+
+.main-section {
+    position: relative;
+    margin-top: 300px;
+
+    &::after {
+        @include background('./img/view/svg/sprite.view.svg', cover, 0 87.6425855513308%);
+        @include pseudo(absolute, '', -25%, 0, 0, 72%);
+        height: 35%;
+        max-height: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-section  {
+        margin-top: 25%;
+    }
+}

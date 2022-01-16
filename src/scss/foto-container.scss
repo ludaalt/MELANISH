@@ -1,0 +1,54 @@
+@import './font.scss';
+@import './mixins.scss';
+@import './base.scss';
+
+.foto-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .foto {
+        max-width: 80%;
+    }
+}
+
+.pseudo-container {
+    margin: 190px 0 110px 0;
+    position: relative;
+    align-self: flex-end;
+
+    &::after {
+        @include pseudo(absolute, '', -120px, 0, 0, 100%);
+        min-height: 190px;
+        @include background('../img/title-gray.svg', 100% 100%, 0% 0%);
+
+    }
+}
+
+
+
+.group-foto-container {
+    @extend %flex-between;
+    margin-top: 150px;
+    align-items: center;
+
+    div:nth-child(2) {
+        margin-left: 70px;
+
+        display: flex;
+        flex-direction: column;
+
+        img:first-child {
+            padding: 0 0 0 70px;
+            margin-bottom: 70px;
+        }
+
+        img:last-child {
+           padding: 0 70px 0 0;
+        }
+    }
+}
+
+
+
+

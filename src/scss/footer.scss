@@ -1,0 +1,46 @@
+@import './mixins.scss';
+
+.footer {
+    display: flex;
+    margin: 160px 0;
+    position: relative;
+
+    img {
+        max-width: 33%;
+    }
+
+    .image-left {
+        opacity: 0.4;
+        transform: rotate(6.92deg);
+        position: absolute;
+        top: -10%;
+        left: 10%;
+
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .image-center {
+        text-align: center;
+        margin: 0 auto;
+        transform: rotate(-4deg);
+    }
+
+    .image-right {
+        opacity: 0.5;
+        transform: rotate(-8.2deg);
+        position: absolute;
+        z-index: -10;
+        right: 15%;
+        top: 5%;
+    }
+
+    &::after {
+        @include pseudo(absolute, '', calc(50% - 65px), 0, 0, 100%);
+        @include background('../img/footer-title.svg', 80% 80%, center);
+        min-height: 130px;
+        z-index: 100;
+      }
+}
