@@ -1,8 +1,8 @@
 # MELANISH*
 
-## [Ссылка](https://melanish.vercel.app/ "MELANISH*") на выполненный проект
+### [Ссылка](https://melanish.vercel.app/ "MELANISH*") на выполненный проект
 
-## Используемые технологии
+**Список используемых технологий:**
 
 - HTML5
 - Adaptive CSS / SCSS
