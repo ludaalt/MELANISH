@@ -2,7 +2,7 @@
 
 .footer {
     display: flex;
-    margin: 160px 0;
+    margin: 20% 0 10%;
     position: relative;
 
     img {
@@ -15,11 +15,6 @@
         position: absolute;
         top: -10%;
         left: 10%;
-
-        &:hover {
-            opacity: 0.8;
-            transition: all 0.3s ease-in-out;
-        }
     }
 
     .image-center {
@@ -38,9 +33,11 @@
     }
 
     &::after {
-        @include pseudo(absolute, '', calc(50% - 65px), 0, 0, 100%);
-        @include background('../img/footer-title.svg', 80% 80%, center);
-        min-height: 130px;
-        z-index: 100;
-      }
+        @include pseudo(absolute, '', 0, 0, 0, 100%);
+        @include background('../img/view/svg/sprite.view.svg', cover, 0 0);
+        height: 30%;
+        width: 50%;
+        z-index: 5;
+        margin: 30px auto;
+    }
 }
