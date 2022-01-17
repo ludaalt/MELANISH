@@ -2,10 +2,11 @@
 @import './base.scss';
 
 .person-section {
+    // border: 6px solid pink;
     @extend %flex-center;
 
     text-align: center;
-    margin-top: 60px;
+    margin-top: 10%;
 
     p:not(:last-child) {
         margin-right: 88px;
@@ -13,7 +14,7 @@
 
     .position {
         margin-bottom: 8px;
-        @include font-pack('DM Mono', normal, normal, 16px, 121.4%, uppercase, #D6D0CE);
+        @include font-pack('Lato', normal, normal, 16px, 121.4%, uppercase, #D6D0CE);
     }
 
     .person {

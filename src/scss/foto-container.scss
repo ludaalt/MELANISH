@@ -3,52 +3,137 @@
 @import './base.scss';
 
 .foto-container {
-    margin-top: 100px;
+    margin-top: 12%;
     display: flex;
     flex-direction: column;
+    // @include font-pack('Nympha', normal, normal, 1.5em, auto, uppercase, #D6D0CE);
 
     .foto {
         max-width: 80%;
+        // overflow: hidden;
+
+        figure {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            overflow: hidden;
+            background: #527c82;
+            text-align: center;
+            cursor: pointer;
+
+            img {
+                position: relative;
+                display: block;
+                opacity: 0.8;
+                height: 100%;
+
+                width: calc(100% + 20px);
+                transition: opacity 0.35s, transform 0.35s;
+                transform: scale(1.1);
+                backface-visibility: hidden; 
+            }
+
+            &:hover img {
+                opacity: 0.4;
+	            transform: translate3d(0,0,0);
+            }
+
+            figcaption {
+                padding: calc(1vw + 1em);
+                color: #fff;
+                backface-visibility: hidden;
+                text-align: left;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                &::before, 
+                &::after {
+                    pointer-events: none;
+                }
+            }
+
+            h3 {
+                font-family: 'Lato';
+                font-weight: 300;
+                text-transform: uppercase;
+                font-size: calc(1vw + 1em);
+                letter-spacing: 3px;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background: #fff;
+                    content: '';
+                    transition: transform 0.35s;
+                    transform: translate3d(-100%,0,0);
+                }
+            }
+
+            &:hover h3::after {
+                transform: translate3d(0,0,0);
+            }
+
+            p {
+                text-transform: capitalize;
+                padding: 0.5em 0;
+                opacity: 0;
+                transition: opacity 0.35s, transform 0.35s;
+                transform: translate3d(100%,0,0);
+                @include font-pack('Nympha', normal, normal, 24px, 121.4%, capitalize, #D6D0CE);  
+            }
+
+            &:hover p {
+                opacity: 1;
+	            transform: translate3d(0,0,0);
+            }
+        }
+
+        &:nth-child(2) {
+            align-self: flex-end;
+            margin: 20% 0 10%;
+        }
     }
 }
 
 .pseudo-container {
-    margin: 190px 0 110px 0;
     position: relative;
-    align-self: flex-end;
 
     &::after {
-        @include pseudo(absolute, '', -120px, 0, 0, 100%);
-        min-height: 190px;
-        @include background('../img/title-gray.svg', 100% 100%, 0% 0%);
-
+        z-index: -2;
+        @include pseudo(absolute, '', -17%, 0, 0, 100%);
+        @include background('../img/view/svg/sprite.view.svg', cover, 0 38.40304182509506%);
+        height: 30%;
     }
 }
 
-
-
 .group-foto-container {
     @extend %flex-between;
-    margin-top: 150px;
+    margin-top: 20%;
     align-items: center;
 
     div:nth-child(2) {
-        margin-left: 70px;
-
+        margin-left: 10%;
         display: flex;
         flex-direction: column;
 
         img:first-child {
-            padding: 0 0 0 70px;
-            margin-bottom: 70px;
+            padding: 0 0 0 10%;
+            margin-bottom: 10%;
         }
 
         img:last-child {
-           padding: 0 70px 0 0;
+           padding: 0 10% 0 0;
         }
     }
 }
-
-
-
-
